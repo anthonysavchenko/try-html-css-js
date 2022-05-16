@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Box</title>
+  </head>
+  <body>
+    <div id="parent" style="display: flex">
+      <div id="child" style="margin-right: 10px">
+        <input id="checkbox" type="checkbox" />
+      </div>
+      <div id="child_with_label">
+        <span>Checkbox</span>
+      </div>
+    </div>
+    <script>
+      var parent_div = document.getElementById("parent");
+      var child_div = document.getElementById("child");
+      var checkbox = document.getElementById("checkbox");
+
+      parent_div.addEventListener("click", function (event) {
+        console.log("parent click");
+      });
+
+      child_div.addEventListener("click", function (event) {
+        console.log("child click");
+      });
+
+      checkbox.addEventListener("click", function (event) {
+        console.log("checkbox click");
+      });
+
+      checkbox.addEventListener("change", function (event) {
+        console.log("checkbox change");
+      });
+
+      // Handle checkbox or it's label click
+
+      parent_div.addEventListener("click", function (event) {
+        checkbox.click();
+      });
+
+      checkbox.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+
+      checkbox.addEventListener("change", function (event) {
+        console.log("handling...");
+      });
+    </script>
+  </body>
+</html>

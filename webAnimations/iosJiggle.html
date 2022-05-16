@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iPhone / iPad Icon Wobble Effect</title>
+
+    <style>
+      body {
+        background-color: #efefef;
+        padding: 25px;
+      }
+
+      #main {
+        width: 450px;
+      }
+
+      #main .icon {
+        padding: 20px;
+        border-radius: 40px;
+      }
+
+      #main .icon:nth-child(2n) {
+        animation-name: keyframes1;
+        animation-iteration-count: infinite;
+        transform-origin: 50% 10%;
+      }
+
+      #main .icon:nth-child(2n-1) {
+        animation-name: keyframes2;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transform-origin: 30% 5%;
+      }
+
+      @keyframes keyframes1 {
+        0% {
+          transform: rotate(-1deg);
+          animation-timing-function: ease-in;
+        }
+
+        50% {
+          transform: rotate(1.5deg);
+          animation-timing-function: ease-out;
+        }
+      }
+
+      @keyframes keyframes2 {
+        0% {
+          transform: rotate(1deg);
+          animation-timing-function: ease-in;
+        }
+
+        50% {
+          transform: rotate(-1.5deg);
+          animation-timing-function: ease-out;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <img
+        class="icon"
+        style="animation-delay: -0.75s; animation-duration: 0.25s"
+        height="100"
+        src="./images/icon1.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.5s; animation-duration: 0.3s"
+        height="100"
+        src="./images/icon2.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.05s; animation-duration: 0.27s"
+        height="100"
+        src="./images/icon3.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.2s; animation-duration: 0.33s"
+        height="100"
+        src="./images/icon4.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.31s; animation-duration: 0.24s"
+        height="100"
+        src="./images/icon7.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.15s; animation-duration: 0.25s"
+        height="100"
+        src="./images/icon5.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.2s; animation-duration: 0.22s"
+        height="100"
+        src="./images/icon6.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.3s; animation-duration: 0.28s"
+        height="100"
+        src="./images/icon8.webp"
+        width="100"
+      />
+      <img
+        class="icon"
+        style="animation-delay: -0.22s; animation-duration: 0.3s"
+        height="100"
+        src="./images/icon9.webp"
+        width="100"
+      />
+    </div>
+  </body>
+</html>

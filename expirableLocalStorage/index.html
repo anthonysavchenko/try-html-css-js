@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expirable Local Storage</title>
+</head>
+<body>
+    <script>
+        /** Один день (сутки) - время хранения значения по умолчанию */
+        const oneDay = 60 * 60 * 24;
+
+        /** Суффикс для ключа к дополнительному значению со временем хранения основного значения */
+        const keySuffix = '_expires';
+
+        /**
+         * Сохраняет переданное значение в Local Storage (или удаляет его)
+         * 
+         * @param {string} key Ключ
+         * @param {any} value Значение. Если `value === null || value === undefined`, то значение будет удалено.
+         *     Эти не получится сохранить с помощью этой функции, а значение `false` получится.
+         * @param {number} expires Время хранения значения в секундах. Если `value === null || value === undefined`,
+         *     то время хранения не учитывается, так как значение будет удалено.
+         */
+        export function setItem(key, value, expires = oneDay) {
+            if (value === null || value === undefined) {
+                removeItem(key);
+            }
+
+            localStorage.setItem(key + keySuffix, `${(expires < 0 ? oneDay : expires) * 1000 + Date.now()}`);
+            localStorage.setItem(key, JSON.stringify(value));
+        }
+
+        /**
+         * Возвращает значение из Local Storage
+         * 
+         * @param {string} key Ключ
+         * @returns Значение
+         */
+        export function getItem(key) {
+            const expiresString = localStorage.getItem(key + keySuffix);
+            const expires = expiresString ? parseInt(expiresString) : undefined;
+
+            if (!expires || expires < Date.now()) {
+                removeItem(key);
+                return null;
+            }
+
+            const value = localStorage.getItem(key);
+
+            if (!value) {
+                removeItem(key);
+                return null;
+            }
+
+            try {
+                return JSON.parse(value);
+            } catch (error) {
+                console.warn(`Не получилось прочитать значение из Local Storage по ключу ${key}`);
+                return null;
+            }
+        }
+
+        /**
+         * Удаляет значение из Local Storage
+         * @param {string} key Ключ
+         */
+        export function removeItem(key) {
+            localStorage.removeItem(key + keySuffix);
+            localStorage.removeItem(key);
+        }
+    </script>
+</body>
+</html>

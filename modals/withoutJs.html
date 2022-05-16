@@ -1,0 +1,108 @@
+<!-- Source: https://www.youtube.com/watch?v=qoO1ZNi1LyI -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Without JS</title>
+    <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease 0s;
+        }
+        .modal:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal__area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .modal__body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            padding: 30px 10px;
+        }
+        .modal__content {
+            position: relative;
+            max-width: 800px;
+            padding: 30px;
+            color: black;
+            background-color: white;
+        }
+        .modal__close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .modal__title {
+            font-size: 40px;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <a href="#modalId">Modal #1</a>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat.
+        </p>
+    </div>
+    <div id="modalId" class="modal">
+        <a href="##" class="modal__area"></a>
+        <div class="modal__body">
+            <div class="modal__content">
+                <a href="##" class="modal__close">X</a>
+                <div class="modal__title">Modal #1</div>
+                <div class="modal__text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+                        est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+                        placeat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Without JS</title>
+    <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease 0s;
+        }
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal__body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            padding: 30px 10px;
+        }
+        .modal__content {
+            position: relative;
+            max-width: 800px;
+            padding: 30px;
+            color: black;
+            background-color: white;
+        }
+        .modal__close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .modal__title {
+            font-size: 40px;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <a class="modal-link" href="#modalId">Modal #1</a>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+            est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+            placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+            atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+            cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+            Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+            expedita cumque placeat.
+        </p>
+    </div>
+    <div id="modalId" class="modal">
+        <div class="modal__body">
+            <div class="modal__content">
+                <a href="#" class="modal__close modal-close">X</a>
+                <div class="modal__title">Modal #1</div>
+                <div class="modal__text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+                        est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+                        placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+                        atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+                        cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+                        Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+                        expedita cumque placeat.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+                        est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+                        placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+                        atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+                        cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+                        Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+                        expedita cumque placeat.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+                        est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+                        placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+                        atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+                        cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+                        Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+                        expedita cumque placeat.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+                        est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+                        placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+                        atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+                        cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+                        Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+                        expedita cumque placeat.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum atque autem
+                        est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita cumque
+                        placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex! Nostrum
+                        atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit expedita
+                        cumque placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error repudiandae amet quo ex!
+                        Nostrum atque autem est dignissimos quibusdam? Dolores natus harum quas doloremque iusto voluptates fugit
+                        expedita cumque placeat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const modalLinks = document.querySelectorAll('.modal-link');
+        
+        if (modalLinks.length > 0) {
+            for (let i = 0; i < modalLinks.length; i++) {
+                modalLinks[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const modalId = modalLinks[i].getAttribute('href').replace('#', '');
+                    const modal = document.getElementById(modalId);
+                    modalOpen(modal);
+                });
+            }
+        }
+
+        const closeModalLinks = document.querySelectorAll('.modal-close');
+
+        if (closeModalLinks.length > 0) {
+            for (let i = 0; i < closeModalLinks.length; i++) {
+                closeModalLinks[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modalClose(closeModalLinks[i].closest('.modal'));
+                });
+            }
+        }
+
+        function modalOpen(modal) {
+            if (modal) {
+                modal.classList.add('open');
+                modal.addEventListener('click', function (e) {
+                    if (!e.target.closest('.modal__content')) {
+                        modalClose(e.target.closest('.modal'))
+                    }
+                });
+            }
+        }
+
+        function modalClose(modal) {
+            modal.classList.remove('open');
+        }
+    </script>
+</body>
+</html>
