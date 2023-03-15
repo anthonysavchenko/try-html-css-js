@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      #banner {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="banner" class="hidden" height="500" autoplay loop muted>
+      <source id="source" type="video/mp4" />
+    </video>
+    <script type="text/javascript" order="40">
+      var src =
+        "https://jsoncompare.org/LearningContainer/SampleFiles/Video/MP4/Sample-MP4-Video-File-for-Testing.mp4";
+      var hideAfterSeconds = "10";
+      var banner = document.getElementById("banner");
+      var source = document.getElementById("source");
+
+      function handleImageLoad() {
+        if (hideAfterSeconds > 0) {
+          banner.classList.remove("hidden");
+          setTimeout(function () {
+            banner.classList.add("hidden");
+          }, hideAfterSeconds * 1000);
+        }
+      }
+
+      banner.addEventListener("loadeddata", handleImageLoad);
+      source.src = src;
+    </script>
+  </body>
+</html>
